@@ -51,6 +51,17 @@ btn.addEventListener('click',function(){
 
 //grab the btns
 
-const openModal = document.querySelector('open-btn');
-const closeModal = document.querySelector('close-btn');
+const openModal = document.querySelector('#open-btn');
+const closeModal = document.querySelector('#close-btn');
 const modal = document.getElementById('modal');
+
+//modal related functions etc
+
+openModal.addEventListener('click',()=>{
+    modal.showModal();
+})
+
+
+closeModal.addEventListener('click',()=>{
+    modal.close();
+})
