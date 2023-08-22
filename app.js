@@ -38,6 +38,10 @@ btn.addEventListener('click',function(){
     const subtitle = document.createElement('p');
     subtitle.textContent = `by ${myLibrary[lastBookIndex].author} , ${myLibrary[lastBookIndex].volumes} Volumes`;
     newDiv.appendChild(subtitle);
+
+    const readStatus = document.createElement('button');
+    readStatus.classList.add('read-status');
+    newDiv.appendChild(readStatus);
     
 
 })
