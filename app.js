@@ -27,10 +27,17 @@ btn.addEventListener('click',function(){
     container.appendChild(newDiv);
     
     const lastBookIndex = myLibrary.length-1;
+
+    //addd title
     const title = document.createElement('h1');
     title.textContent = `${myLibrary[lastBookIndex].title}`;
-
     newDiv.appendChild(title);
+
+    //add author and pages
+
+    const subtitle = document.createElement('p');
+    subtitle.textContent = `by ${myLibrary[lastBookIndex].author} , ${myLibrary[lastBookIndex].volumes} Volumes`;
+    newDiv.appendChild(subtitle);
     
 
 })
