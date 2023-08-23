@@ -70,3 +70,25 @@ openModal.addEventListener('click',()=>{
 closeModal.addEventListener('click',()=>{
     modal.close();
 })
+
+//try grab the form data
+
+
+
+
+const form = document.getElementById('add-book');
+
+form.addEventListener('submit',(e)=>{
+
+    e.preventDefault();
+
+    const title = document.getElementById('title');
+    const author = document.getElementById('author');
+    const vols = document.getElementById('volumes');
+
+
+    console.log(title.value,author.value,vols.value);
+
+})
+
+
