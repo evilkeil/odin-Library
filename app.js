@@ -19,9 +19,9 @@ const reZero = new Book("Re Zero","Tappei Nagatsuki",30,true).addBookToLibrary()
 
 
 const container = document.querySelector('.container');
-const btn = document.getElementById('btn');
 
-btn.addEventListener('click',function(){
+
+function createCard(){
     const newDiv = document.createElement('div');
     newDiv.classList.add('title');
     container.appendChild(newDiv);
@@ -47,9 +47,7 @@ btn.addEventListener('click',function(){
     readStatus.textContent="Read";
     readStatus.setAttribute('id', 'read-status'); 
     newDiv.appendChild(readStatus);
-    
-
-})
+}
 
 
 
@@ -92,17 +90,23 @@ form.addEventListener('submit',(e)=>{
     const vols = volsInput.value;
     
     let readUnread;
-    
+
     if(readInput.value === "read"){
          readUnread = true;
     }else if(readInput.value === "unread"){
          readUnread = false;
     }
 
-    console.log(readUnread);
+    
 
-    const newBook = new Book(title,author,vols,false);
+    const newBook = new Book(title,author,vols,readUnread);
 
+    // console.dir(newBook);
+
+    newBook.addBookToLibrary();
+    console.log(myLibrary);
+
+        createCard();
 
 
     
