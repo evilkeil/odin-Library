@@ -107,7 +107,7 @@ form.addEventListener('submit',(e)=>{
     console.log(myLibrary);
 
         createCard();
-
+        form.reset();
 
     
 
