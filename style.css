@@ -8,6 +8,7 @@ body{
     height: 100vh;
 }
 
+
 .container{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
@@ -18,3 +19,18 @@ body{
     height: 300px;
 }
 
+.btn-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+#open-btn{
+    width: 100px;
+    height: 50px;
+    border-radius: 15px;
+}
+
+#open-btn:hover,#open-btn:focus{
+    cursor: pointer;
+}
