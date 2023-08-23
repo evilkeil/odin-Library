@@ -1,16 +1,21 @@
 *,*::before,*::after{
     box-sizing: border-box;
 }
+:root{
+    --mainColor:#7C5340;
+    --secondaryColor:#AE8165;
+    --textColor:#ECDFD1;
+    --btnMain:#E0AB80;
+    --btnScondary:#DDBE9F;
+
+}
 
 body{
     padding: 0;
     margin: 0;
     height: 100vh;
-}
-:root{
-    --mainColor:#7C5340;
-    --secondaryColor:#AE8165;
-    --textColor:#ECDFD1;
+    background-color: var(--mainColor);
+    color: var(--textColor);
 }
 
 .container{
@@ -21,6 +26,7 @@ body{
 .title{
     border:1px solid black;
     height: 300px;
+    background-color: var(--secondaryColor);
 }
 
 .btn-container{
@@ -33,8 +39,14 @@ body{
     width: 100px;
     height: 50px;
     border-radius: 15px;
+    background-color: var(--btnMain);
+    color: black;
+    border: none;
 }
 
 #open-btn:hover,#open-btn:focus{
     cursor: pointer;
+    background-color: var(--mainColor);
+    color: var(--textColor);
+    border: 1px solid var(--btnScondary);
 }
