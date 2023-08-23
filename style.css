@@ -7,7 +7,11 @@ body{
     margin: 0;
     height: 100vh;
 }
-
+:root{
+    --mainColor:#7C5340;
+    --secondaryColor:#AE8165;
+    --textColor:#ECDFD1;
+}
 
 .container{
     display: grid;
