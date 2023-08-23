@@ -23,7 +23,7 @@ const btn = document.getElementById('btn');
 
 btn.addEventListener('click',function(){
     const newDiv = document.createElement('div');
-    newDiv.classList.add('book');
+    newDiv.classList.add('title');
     container.appendChild(newDiv);
     
     const lastBookIndex = myLibrary.length-1;
@@ -39,8 +39,13 @@ btn.addEventListener('click',function(){
     subtitle.textContent = `by ${myLibrary[lastBookIndex].author} , ${myLibrary[lastBookIndex].volumes} Volumes`;
     newDiv.appendChild(subtitle);
 
+    const readLabel = document.createElement('label');
+    readLabel.setAttribute('for', 'read-status'); 
+    readLabel.textContent = "read-status :"
+    newDiv.appendChild(readLabel);
     const readStatus = document.createElement('button');
-    readStatus.classList.add('read-status');
+    readStatus.textContent="Read";
+    readStatus.setAttribute('id', 'read-status'); 
     newDiv.appendChild(readStatus);
     
 
