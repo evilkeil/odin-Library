@@ -21,24 +21,24 @@
     </div>
     <dialog  class="modal" id="modal">
         <h2>Add a book into your Library</h2>
-        <form id="add-book" method="dialog">
+        <form id="add-book">
             <div>
                 <label for="title">Book Title:</label>
                 <input type="text" id="title" name="title" required>
             </div>
             <div>
-                <label for="author">Author</label>
+                <label for="author">Author:</label>
                 <input type="text" id="author" name="author" required>
             </div>
             <div>
-                <label for="volumes">Volumes</label>
+                <label for="volumes">Volumes:</label>
                 <input type="number" name="volumes" id="volumes" required>
             </div>
 
             <div>
                 <button type="reset">reset</button>
                 <button id="submit">submit</button>
-                <button id="close-btn">X</button>
+                <button id="close-btn" method="dialog" type="reset">X</button>
             </div>
         </form>
         
