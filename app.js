@@ -39,7 +39,12 @@ function createCard() {
   readLabel.textContent = "read-status :";
   newDiv.appendChild(readLabel);
   const readStatus = document.createElement("button");
-  readStatus.textContent = "Read";
+
+  if (myLibrary[lastBookIndex].read) {
+    readStatus.textContent = "Read";
+  } else if (myLibrary[lastBookIndex].read === false) {
+    readStatus.textContent = "Unread";
+  }
   readStatus.setAttribute("id", "read-status");
   newDiv.appendChild(readStatus);
 }
@@ -87,7 +92,6 @@ form.addEventListener("submit", (e) => {
   const newBook = new Book(title, author, vols, readUnread);
 
   newBook.addBookToLibrary();
-  
 
   createCard();
   form.reset();
