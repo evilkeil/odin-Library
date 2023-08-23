@@ -16,7 +16,7 @@ Book.prototype = {
 
 const container = document.querySelector(".container");
 
-function createCard() {
+function createCard(book) {
   const newDiv = document.createElement("div");
   newDiv.classList.add("title");
   container.appendChild(newDiv);
@@ -45,8 +45,15 @@ function createCard() {
   } else if (myLibrary[lastBookIndex].read === false) {
     readStatus.textContent = "Unread";
   }
+  
+  readStatus.addEventListener("click", () => {
+    book.read = !book.read; // Toggle the read status
+    readStatus.textContent = book.read ? "Read" : "Unread"; // Update button text
+  });
+
   readStatus.setAttribute("id", "read-status");
   newDiv.appendChild(readStatus);
+  
 }
 
 //grab the btns
@@ -80,6 +87,7 @@ form.addEventListener("submit", (e) => {
   const title = titleInput.value;
   const author = authorInput.value;
   const vols = volsInput.value;
+  const book = readInput.value;
 
   let readUnread;
 
@@ -89,10 +97,13 @@ form.addEventListener("submit", (e) => {
     readUnread = false;
   }
 
+  
+
   const newBook = new Book(title, author, vols, readUnread);
 
   newBook.addBookToLibrary();
 
-  createCard();
+  createCard(newBook);
   form.reset();
+  modal.close();
 });
