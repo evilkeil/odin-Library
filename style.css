@@ -5,4 +5,16 @@
 body{
     padding: 0;
     margin: 0;
+    height: 100vh;
 }
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+}
+
+.title{
+    border:1px solid black;
+    height: 300px;
+}
+
