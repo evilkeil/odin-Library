@@ -23,7 +23,7 @@ function createCard() {
 
   const lastBookIndex = myLibrary.length - 1;
 
-  //addd title
+  //add title
   const title = document.createElement("h1");
   title.textContent = `${myLibrary[lastBookIndex].title}`;
   newDiv.appendChild(title);
@@ -60,7 +60,7 @@ closeModal.addEventListener("click", () => {
   modal.close();
 });
 
-//try grab the form data
+// grab the form data
 
 const form = document.getElementById("add-book");
 
@@ -86,10 +86,8 @@ form.addEventListener("submit", (e) => {
 
   const newBook = new Book(title, author, vols, readUnread);
 
-  // console.dir(newBook);
-
   newBook.addBookToLibrary();
-  console.log(myLibrary);
+  
 
   createCard();
   form.reset();
