@@ -82,12 +82,30 @@ form.addEventListener('submit',(e)=>{
 
     e.preventDefault();
 
-    const title = document.getElementById('title');
-    const author = document.getElementById('author');
-    const vols = document.getElementById('volumes');
+    const titleInput = document.getElementById('title');
+    const authorInput = document.getElementById('author');
+    const volsInput = document.getElementById('volumes');
+    const readInput = document.getElementById('read');
+
+    const title = titleInput.value;
+    const author =authorInput.value;
+    const vols = volsInput.value;
+    
+    let readUnread;
+    
+    if(readInput.value === "read"){
+         readUnread = true;
+    }else if(readInput.value === "unread"){
+         readUnread = false;
+    }
+
+    console.log(readUnread);
+
+    const newBook = new Book(title,author,vols,false);
 
 
-    console.log(title.value,author.value,vols.value);
+
+    
 
 })
 
