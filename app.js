@@ -34,12 +34,9 @@ function createCard(book) {
   subtitle.textContent = `by ${myLibrary[lastBookIndex].author} , ${myLibrary[lastBookIndex].volumes} Volumes`;
   newDiv.appendChild(subtitle);
 
-//new lines start here
-
-    const btnDiv = document.createElement('div');
-    btnDiv.classList.add('title-btn');
-    newDiv.appendChild(btnDiv)
-//ends here
+  const btnDiv = document.createElement("div");
+  btnDiv.classList.add("title-btn");
+  newDiv.appendChild(btnDiv);
   const readLabel = document.createElement("label");
   readLabel.setAttribute("for", "read-status");
   readLabel.textContent = "read-status :";
@@ -51,7 +48,7 @@ function createCard(book) {
   } else if (myLibrary[lastBookIndex].read === false) {
     readStatus.textContent = "Unread";
   }
-  
+
   readStatus.addEventListener("click", () => {
     book.read = !book.read; // Toggle the read status
     readStatus.textContent = book.read ? "Read" : "Unread"; // Update button text
@@ -59,7 +56,6 @@ function createCard(book) {
 
   readStatus.setAttribute("id", "read-status");
   btnDiv.appendChild(readStatus);
-  
 }
 
 //grab the btns
@@ -102,8 +98,6 @@ form.addEventListener("submit", (e) => {
   } else if (readInput.value === "unread") {
     readUnread = false;
   }
-
-  
 
   const newBook = new Book(title, author, vols, readUnread);
 
