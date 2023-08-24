@@ -34,10 +34,16 @@ function createCard(book) {
   subtitle.textContent = `by ${myLibrary[lastBookIndex].author} , ${myLibrary[lastBookIndex].volumes} Volumes`;
   newDiv.appendChild(subtitle);
 
+//new lines start here
+
+    const btnDiv = document.createElement('div');
+    btnDiv.classList.add('title-btn');
+    newDiv.appendChild(btnDiv)
+//ends here
   const readLabel = document.createElement("label");
   readLabel.setAttribute("for", "read-status");
   readLabel.textContent = "read-status :";
-  newDiv.appendChild(readLabel);
+  btnDiv.appendChild(readLabel);
   const readStatus = document.createElement("button");
 
   if (myLibrary[lastBookIndex].read) {
@@ -52,7 +58,7 @@ function createCard(book) {
   });
 
   readStatus.setAttribute("id", "read-status");
-  newDiv.appendChild(readStatus);
+  btnDiv.appendChild(readStatus);
   
 }
 
